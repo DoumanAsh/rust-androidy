@@ -16,7 +16,7 @@ ENV FLUTTER_CHANNEL="stable"
 ENV FLUTTER_VERSION="1.22.6"
 ENV FLUTTER_URL="https://storage.googleapis.com/flutter_infra/releases/$FLUTTER_CHANNEL/linux/flutter_linux_$FLUTTER_VERSION-$FLUTTER_CHANNEL.tar.xz"
 ENV FLUTTER_SDK_HOME="/home/$USER/flutter"
-ENV PATH="$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/platforms:$FLUTTER_SDK_HOME/bin:$HOME/.cargo/bin:$ANDROID_NDK_HOME:$PATH"
+ENV PATH="$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/platforms:$FLUTTER_SDK_HOME/bin:/home/$USER/.cargo/bin:$ANDROID_NDK_HOME:$PATH"
 
 ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get update \
