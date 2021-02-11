@@ -7,6 +7,8 @@ ENV ANDROID_VERSION="29"
 ENV ANDROID_BUILD_TOOLS_VERSION="29.0.3"
 ENV ANDROID_SDK_ROOT="/home/$USER/android"
 ENV ANDROID_ARCHITECTURE="x86_64"
+ENV RUSTUP_HOME="/home/$USER/rustup"
+ENV CARGO_HOME="/home/$USER/rustup/cargo"
 
 ENV ANDROID_NDK_REV="r22"
 ENV ANDROID_NDK_URL="https://dl.google.com/android/repository/android-ndk-$ANDROID_NDK_REV-linux-x86_64.zip"
@@ -57,8 +59,8 @@ RUN curl -o flutter.tar.xz $FLUTTER_URL \
 # Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain stable
 
-RUN home/$USER/.cargo/bin/cargo install cargo-ndk
-RUN home/$USER/.cargo/bin/rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
+RUN $CARGO_HOME/bin/cargo install cargo-ndk
+RUN $CARGO_HOME/bin/rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
 
 RUN rm -rf /tmp/*
 
