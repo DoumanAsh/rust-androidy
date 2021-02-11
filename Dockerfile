@@ -57,8 +57,8 @@ RUN curl -o flutter.tar.xz $FLUTTER_URL \
 # Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain stable
 
-RUN $HOME/.cargo/bin/cargo install cargo-ndk
-RUN $HOME/.cargo/bin/rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
+RUN home/$USER/.cargo/bin/cargo install cargo-ndk
+RUN home/$USER/.cargo/bin/rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
 
 RUN rm -rf /tmp/*
 
